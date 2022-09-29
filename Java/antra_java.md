@@ -90,7 +90,9 @@ Difference between Java Heap Space and Stack Memory
 
 The garbage collector finds these unused objects and deletes them to free up memory.
 
-how to declare a thread: a) Extend Thread class b) Implement Runnable interface
+## how to declare a thread: 
+a) Extend Thread class 
+b) Implement Runnable interface
 You can create threads by implementing the runnable interface and overriding the run() method. Then, you can create a thread object and call the start() method.
 
 how do you use asynchronous threads in java:    use the Runnable interface and Thread class
@@ -125,21 +127,22 @@ Join () method is used to join one thread with the end of the currently running 
 
 the flow of execution is called Thread.
 
-OOP
+## OOP
 explain four fundamentals of OOP
 （PIED）Inheritance, Encapsulation, Polymorphism, and Data abstraction.
 
-Encapsulation in Java is a mechanism of wrapping the variables and methods together as a single unit. In encapsulation, the variables of a class will be hidden from other classes, and can be accessed only through the methods of their current class. Therefore, it is also known as data hiding.
+## Encapsulation
+Java is a mechanism of wrapping the variables and methods together as a single unit. In encapsulation, the variables of a class will be hidden from other classes, and can be accessed only through the methods of their current class. Therefore, it is also known as data hiding.
 
 In Java, Data Abstraction is defined as the process of reducing the object to its essence so that only the necessary characteristics are exposed to the users.
 
 The abstract keyword is a non-access modifier, used for classes and methods:
 
-Abstract class is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class). Abstract classes should have at least one abstract method. , i.e., methods without a body. It can have multiple concrete methods.
+## Abstract class is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class). Abstract classes should have at least one abstract method. , i.e., methods without a body. It can have multiple concrete methods.
 
-Inheritance vs. Polymorphism
+## Inheritance vs. Polymorphism
 1. Inheritance is allows a class to inherit behavior and data from other class.
-2. Polymorphism allows a single method to behave in different ways in different object
+2. Polymorphism allows a single method to behave in different ways in different object. (overriding & overloading)
 
 method overriding is Modifying a super class method in the sub class.
 Method overloading is one class has more than one method with same name but different parameters. Overloaded methods will have same name but different number of arguments or different types of arguments.
@@ -179,7 +182,7 @@ Protected: Protected members of a class are visible within the package. Therefo
 
 Why do we use inheritance? The aim of inheritance is to provide the reusability of code. 
 
-overload / override
+## overload / override
 1. Overriding implements Runtime Polymorphism whereas Overloading implements Compile time polymorphism.
 2. The method Overriding occurs between superclass and subclass. Overloading occurs between the methods in the same class.
 3. Overriding methods have the same signature. Overloaded method names are the same but the parameters are different.
