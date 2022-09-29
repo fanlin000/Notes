@@ -19,25 +19,26 @@ Final: The final keyword is used to make any class or amethod or a field as unch
 Finally: . The finally block executes whether exception rise or not and whether exception handled or not. The finally block in java is used to put important codes such as clean up code e.g. closing the file or closing the connection
 Finalize: It is a method that the Garbage Collector to perform clean-up activity. Clean-up activity means closing the resources associated with that object like Database Connection, Network Connection
 
-## throws/ throw
+### throws/ throw
 The throw keyword is used to explicitly throw an exception from a method or any block of code. We can throw either checked or unchecked exception. The throw keyword is mainly used to throw custom exceptions.
 
 The Throws keyword is used in the signature of method to indicate that this method might throw one of the listed type exceptions. The caller to these methods has to handle the exception using a try-catch block. Throws keyword is required only for checked exception and usage of throws keyword for unchecked exception is meaningless.
 throws keyword is required only to convince compiler and usage of throws keyword does not prevent abnormal termination of program. By the help of throws keyword we can provide information to the caller of the method about the exception.
-
 The signature of a method consists of the name of the method and its parameters.
 
 String: String variables are immutable
-## String Buffer: 
+### String Buffer: 
 string values are stored in a stack. If the values are changed then the new value replaces the older value. The string buffer is synchronized which is thread-safe. Performance is slower than the String Builder.
-## String Builder: 
+### String Builder: 
 This is the same as String Buffer except for the String Builder which is not threaded safely that is not synchronized. So obviously the performance is fast.
 
-Multithreading refers to a process of executing two or more threads simultaneously for maximum utilization of the CPU. 
-The error occurs due to the lack of system resources and our application should not catch errors. E.g. system crash error and out of memory error. Errors mostly occur at runtime. 
+### Multithreading 
+refers to a process of executing two or more threads simultaneously for maximum utilization of the CPU. 
+### The error 
+occurs due to the lack of system resources and our application should not catch errors. E.g. system crash error and out of memory error. Errors mostly occur at runtime. 
 Exceptions are the problems which can occur at runtime and compile time. It mainly occurs in the code written by the developers. 
 
-## daemon thread
+### daemon thread
 a thread that does not prevent the JVM from exiting when the program finishes but the thread is still running. An example for a daemon thread is the garbage collection. Daemon thread is a low priority thread that runs in background to perform tasks such as garbage collection.
 
 In Java, a static member is a member of a class that isn't associated with an instance of a class. Instead, the member belongs to the class itself. As a result, you can access the static member without first creating a class instance.
@@ -53,28 +54,28 @@ HashMap requires two objects put(K key, V Value) to add an element to HashMap ob
 
 DualHashBidiMap: use key to find value, use value to find keys.
 
-## array vs arraylist
+### array vs arraylist
 1. Array is a fixed length data structure whereas ArrayList is a variable length Collection class. We cannot change length of array once created in Java but ArrayList can be changed.
 2.  ArrayList can only store objects. But array can contain both primitives and objects in Java. Since Java 5, primitives are automatically converted in objects which is known as auto-boxing.
 
-## arraylist vs linkedlist
+### arraylist vs linkedlist
 1. ArrayList internally uses a dynamic array. LinkedList internally uses a doubly linked list. 
 2. Manipulation with ArrayList is slow， If any element is removed from the array, all the bits are shifted in memory. Manipulation with LinkedList is faster. 
 3. ArrayList is better for storing and accessing data. LinkedList is better for manipulating data. 
 4. An ArrayList class can act as a list only because it implements List only. LinkedList class can act as a list and queue both because it implements List and Deque interfaces.
 
-## Diff between List and set
+### Diff between List and set
 List allows duplicate elements. Set doesn’t allow duplicate elements.
 The List is an ordered sequence. The Set is an unordered sequence.
 List implementations are ArrayList, LinkedList, Vector, Stack. Set implementations are HashSet, LinkedHashSet.
 
 hashmap? a hash table is a data structure. key-value pair. O(1).
 
-## hash table & hash map
+### hash table & hash map
 1. HashMap is non-synchronized. It is not thread-safe whereas Hashtable is synchronized. It is thread-safe and can be shared with many threads. 
 2. HashMap allows null keys and values whereas Hashtable doesn’t allow null key or value.
 
-## stack/heap/queue
+### stack/heap/queue
 Heap: A tree-based data structure. It is ordered. heap can be either a min heap or a max heap. Usually for kth largest value in a array.
 A queue can be implemented using an array. FIFO
 A stack can be implemented using an array or a linked list. LIFO
@@ -82,7 +83,7 @@ A stack can be implemented using an array or a linked list. LIFO
 Types of Memory areas allocated by the JVM:
 Class(Method) Area/Heap/Stack/Program Counter Register/Native Method Stack
 
-Difference between Java Heap Space and Stack Memory
+### Difference between Java Heap Space and Stack Memory
 1. Java Heap Space is used throughout the application, but Stack is only used for the currently running methods 
 2. The Heap Space contains all objects are created, but Stack contains any reference to those objects and primitive. 
 3. Memory allocation in the Heap Space is accessed through a complex, young-generation, old-generation system. Stack is accessed through a last-in, first-out (LIFO) memory allocation system.
@@ -90,21 +91,15 @@ Difference between Java Heap Space and Stack Memory
 
 The garbage collector finds these unused objects and deletes them to free up memory.
 
-## how to declare a thread: 
+### how to declare a thread: 
 a) Extend Thread class 
 b) Implement Runnable interface
 You can create threads by implementing the runnable interface and overriding the run() method. Then, you can create a thread object and call the start() method.
 
-how do you use asynchronous threads in java:    use the Runnable interface and Thread class
-
-When to use the Runnable interface Vs Thread class in Java? Extend tread when we do not need to extend other class.
-
-Thread life cycle:  New Runnable Running Non-runnable (Blocked) Terminated.
-
-A thread can access a synchronized method only if the thread can get the key to the objects to lock
-
 What is the purpose of a Volatile Variable?
 Used to make thread safe.  variables are going to get read by multiple threads, but written to by only one thread . variable stored in main memory
+### Volatile
+The values of the volatile variable will never be cached and always fetched from main memory. All writes and reads will be done from the main memory. Can cause data inconsistency problem. 
 
 volatile vs Synchronization
 Volatile keyword is not a substitute of synchronized keyword
@@ -114,7 +109,7 @@ Use Synchronized when your variables will get read and written to by multiple 
 Checked Exception: are checked by the compiler at the time of compilation.  Classes that extend Throwable class except Runtime exception and Error are called checked Exception. Checked Exceptions must either declare the exception using throws keyword (or) surrounded by appropriate try/catch. For Example, ClassNotFound Exception
 Unchecked Exception: These exceptions are not checked during the compile time by the compiler. e.g Arithmetic Exception/ArrayIndexOutOfBounds Exception
 
-getter/setter,
+### getter/setter,
 getters retrieves the private variables. A setters set the values of the attributes.
 
 Why are Getter and Setter better than directly changing and retrieving fields ?
@@ -133,24 +128,26 @@ explain four fundamentals of OOP
 
 ## Encapsulation
 Java is a mechanism of wrapping the variables and methods together as a single unit. In encapsulation, the variables of a class will be hidden from other classes, and can be accessed only through the methods of their current class. Therefore, it is also known as data hiding.
-
 In Java, Data Abstraction is defined as the process of reducing the object to its essence so that only the necessary characteristics are exposed to the users.
-
 The abstract keyword is a non-access modifier, used for classes and methods:
 
-## Abstract class is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class). Abstract classes should have at least one abstract method. , i.e., methods without a body. It can have multiple concrete methods.
+### Abstract class is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class). Abstract classes should have at least one abstract method. , i.e., methods without a body. It can have multiple concrete methods.
 
-## Inheritance vs. Polymorphism
+### Inheritance vs. Polymorphism
 1. Inheritance is allows a class to inherit behavior and data from other class.
 2. Polymorphism allows a single method to behave in different ways in different object. (overriding & overloading)
 
-method overriding is Modifying a super class method in the sub class.
-Method overloading is one class has more than one method with same name but different parameters. Overloaded methods will have same name but different number of arguments or different types of arguments.
+###  overload / override
+1. Overriding implements Runtime Polymorphism whereas Overloading implements Compile time polymorphism.
+2. The method Overriding occurs between superclass and subclass. Overloading occurs between the methods in the same class.
+3. Overriding methods have the same signature. Overloaded method names are the same but the parameters are different.
+4. With Overloading, the method to call is determined at the compile-time. With overriding, the method call is determined at the runtime based on the object type.
+5. If overriding breaks, it can cause serious issues in our program because the effect will be visible at runtime. Whereas if overloading breaks, the compile-time error will come and it’s easy to fix.
 
 Downside of multi-inheritance
 The main consequence of multiple inheritance is the diamond problem. It causes ambiguity and complexity.
 
-When to use interface
+###  When to use interface
 1. We want to specify the behaviour of a particular data type, but not concerned about implementations.
 2. To build loosely coupled, entensible, testable applications.
 
@@ -167,7 +164,7 @@ The abstract method alone should be declared.
 Classes that implement the interface should provide the implementation for all the methods.
 The interface contains only constants.
 
-Abstract keyword
+### Abstract keyword
 abstract keyword is a non-access modifier, used for classes and methods:
 abstract class: is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class). 
 Abstract method: can only be used in an abstract class, and it does not have a body. The body is provided by the subclass (inherited from).
@@ -182,35 +179,28 @@ Protected: Protected members of a class are visible within the package. Therefo
 
 Why do we use inheritance? The aim of inheritance is to provide the reusability of code. 
 
-## overload / override
-1. Overriding implements Runtime Polymorphism whereas Overloading implements Compile time polymorphism.
-2. The method Overriding occurs between superclass and subclass. Overloading occurs between the methods in the same class.
-3. Overriding methods have the same signature. Overloaded method names are the same but the parameters are different.
-4. With Overloading, the method to call is determined at the compile-time. With overriding, the method call is determined at the runtime based on the object type.
-5. If overriding breaks, it can cause serious issues in our program because the effect will be visible at runtime. Whereas if overloading breaks, the compile-time error will come and it’s easy to fix.
 
-
-## SQL
+###  SQL
 what is transaction
 When a group of database operations is done as a single unit then it is called a transaction. It is mandatory to complete all the tasks of a transaction to make the transaction successful.
 
-**mysql and nosql**
+### mysql and nosql
 SQL databases are table-based on the other hand NoSQL databases are either key-value pairs, document-based, graph databases or wide-column stores. 
 SQL databases are primarily called as Relational Databases; whereas NoSQL database are primarily called as non-relational or distributed database. 
 SQL databases are not suited for hierarchical data storage. NoSQL databases are best suited for hierarchical data storage.
 SQL databases are best suited for complex queries. NoSQL databases are not so good for complex queries
 
-**primary key vs foreign key**
+### primary key vs foreign key
 A primary key is a set of columns in a table whose values uniquely identify a row in the table.  A foreign key is a set of columns in a table whose values correspond to the values of the primary key in another table(parent table)
 
-**The differences between these two keys are mentioned below:**
+### The differences between these two keys are mentioned below:
 The primary key can never accept a NULL value but foreign key accepts a NULL value.
 The primary key uniquely identifies a record, whereas foreign key refers to the primary key of another table.
 When a record is inserted in a table that contains the primary key then it is not necessary to insert the value on the table that contains this primary key field as the foreign key.
 When a record is deleted from the table that contains the primary key then the corresponding record must be deleted from the table containing the foreign key for data consistency. But any record can be deleted from the table that contains a foreign key without deleting a related record of another table.
 
 
-**what's the query**
+### what's the query
 A query is a request for data or information from database tables
 
 **Union** is used to combine two or more queries into a single result set using the select statements. 
