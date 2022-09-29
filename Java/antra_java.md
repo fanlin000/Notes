@@ -322,7 +322,7 @@ Minor GC is fot the young generation,counter to count the life cycle, one the li
 #### Serial collector:
 a basic collector runs in single thread.
 
-#### concurent collector(CMS):
+#### concurent mark sweep collector(CMS):
 A thread that performs GC along with application execution as the application runs. it doesn't wait for the old gernation to be full to begin the major collections. It stops the world only during mark/remark.  The newer garbage-first collector (G1) replace CMS since JAVA 9.
 
 #### parallel collector
