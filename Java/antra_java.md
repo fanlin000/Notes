@@ -659,7 +659,7 @@ Function: map a value to different value
 predicate: test a condition
  
 ### Stream API
-Stream is a sequence of elements supporting sequential and parallel aggregate operations.
+Stream is a declarative programming (instructor) approach to iterate, use to process collection of objects. Most of the methods are defined on Java .util.stream
 
 To perform a computation, stream operations are composed into a stream pipeline. A stream pipeline consists of a source (which might be an array, a collection, a generator function, an I/O channel, etc), zero or more intermediate operations (which transform a stream into another stream, such as filter(Predicate)), and a terminal operation (which produces a result or side-effect, such as count() or forEach(Consumer)). Streams are lazy; computation on the source data is only performed when the terminal operation is initiated, and source elements are consumed only as needed.
 
@@ -669,19 +669,22 @@ A parallel stream can parallel execute stream processing tasks. For example, if 
 Unlike sequential Stream, the parallel Stream can launch multiple threads to search for those orders on the different parts of the Stream and then combine the result.
 
 #### What is the difference between intermediate and terminal operations on Stream? (answer)
-The intermediate Stream operation returns another Stream, intermediate stream have to combined with terminal operation.
+The intermediate Stream operation returns another Stream, intermediate stream have to combined with terminal operation. 
+1. Map
+2. Filter
+3. Sorted
  
 On the other hand, the terminal operation produces a result.
 
 Once a terminal method like forEach() or collect() is called, you cannot call any other method of Stream or reuse the Stream.
  
 #### What do you mean by saying Stream is lazy? (answer)
-When we say Stream is lazy, we mean that most of the methods are defined on Java .util.stream.Stream class is lazy i.e. they will not work by just including them on the Stream pipeline.
+we mean that most of the methods are defined on Java .util.stream.Stream class is lazy i.e. they will not work by just including them on the Stream pipeline.
 
 They only work when you call a terminal method on the Stream and finish as soon as they find the data they are looking for rather than scanning through the whole set of data.
  
 ### Optional
-Use optional to avoid NullPointerException.
+Use optional to avoid NullPointerException. By using optional, we can specify alternate values to return. That way we can know if the container object may or may not contain non-null value.
 ```
 Optional<object> optional1 = Optional.empty()
 if(optional1.isPresent()){
