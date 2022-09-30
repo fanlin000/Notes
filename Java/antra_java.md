@@ -751,8 +751,11 @@ The typical difference is that threads (of the same process) share memory space 
 
 #### Q2: What is a thread pool?
 A thread pool manages the pool of worker threads, it contains a BlockingQueue that keeps tasks waiting to get executed.
-
-java.util.concurrent.Executors provide implementation of java.util.concurrent.Executor interface to create the thread pool in java. 
+ 
+### BlockingQueue: 
+ a java Queue that support operations that wait for the queue to become non-empty when removing an element. Doesn’t accept null vales. Thread-safe.
+### PriorityBlockingQueue 
+ one alternative implementation if the thread-safe implementation is needed.
  
 #### types :
 1.	single thread pool
@@ -768,7 +771,7 @@ They are many thread and a BlockingQueue in the thread pool, the thread pool hav
 A thread pool increase performance by reducing the number of threads needed and managing their lifecycle. Essentially, threads are kept in the thread pool until they're needed, after which they execute the task and return the pool to be reused later.
 
 #### How to create space internally thread pool 内部如何开辟空间, what the disadvantages.
-   ExecutorService.  setCorePoolSize method will change the core pool size
+Create Executor Pool using ExecutorService and pass a set of tasks to it. Executor will automatically adjust the pool size according to the bounds set by Core Pool size. By using the executor, need to implement the Runnable objects and send them to the executor to execute.
 
 #### Memory leekage.
 A Memory Leak is a situation when there are objects present in the heap that are no longer used, but the garbage collector is unable to remove them from memory and, thus they are unnecessarily maintained.
